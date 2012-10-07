@@ -1,0 +1,120 @@
+@import 'mixin';
+body{
+    color: #666666;
+    background: url('../img/bg.png') #ccc repeat;
+    font-family: "Aller","Lucida Grande",sans-serif;
+    -webkit-font-smoothing: antialiased;
+    font-size: 12px;
+}
+
+#container {
+    width: 960px;
+    margin: auto;
+    min-height: 500px;
+}
+
+
+#logo {
+    padding: 20px;
+}
+h1{
+    padding: 0;
+    margin: 0;
+}
+#page {
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    min-height: 400px;
+    padding: 20px;
+}
+
+#footer {
+    text-align: center;
+}
+
+#loader{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+}
+
+
+
+#info{
+    background: none repeat scroll 0 0 #FAFAFA;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    height: 800px
+}
+#content{
+    height: 100%;
+    .left{
+        width: 230px;
+        margin-right: 20px;
+
+        input[type=text], textarea{
+            width: 188px;
+        }
+    }
+    .right{
+        width: 670px;
+        margin-top: 20px;
+    }
+    h1{
+        color: #898989;
+
+
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 40px;
+        padding-left: 14px;
+        text-shadow: 0 1px 0 #FFFFFF;
+        text-transform: uppercase;
+    }
+}
+
+#wrapper{
+
+    height: 100%;
+}
+
+.project-wrapper{
+    background-color: #CCCCCC;
+    border: 5px solid white;
+    position: relative;
+    float: left;
+
+    @include shadow();
+    margin:  0 0 15px 15px;
+}
+.thumb{
+    height: 98px;
+    width: 196px;
+}
+.title{
+    background: none repeat scroll 0 0 #19292E;
+    color: #BCBCBC;
+    display: block;
+    font-size: 10px;
+    height: 15px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: 0;
+    width: 196px;
+}
+.project-wrapper .actions.bottom{
+    bottom: -10px;
+    left: 25px;
+    position: absolute;
+}
+.project-wrapper .actions.top{
+    top: -5px;
+    right: -5px;
+    position: absolute;
+}
+.project-wrapper .actions.top .btn{
+    border-radius: 20px 0px 20px 20px;
+}
+i{}

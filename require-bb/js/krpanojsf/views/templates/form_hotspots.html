@@ -1,0 +1,13 @@
+<h1>Hotspot Editor</h1>
+<a href="#location/<%= krApp.models.location.get('id') %>/hotspots" class="back"><i class="icon icon-list"></i>Back to hotspot overview</a>
+<div id="type" class="radio attribute">
+    <label title="define the type of hotspot. ">Type of hotspot</label>
+    <select>
+        <option>Location - Link to another panorama</option>
+        <option>URL - open an external link to a website or resource</option>
+        <option>Popup - show information in a text field</option>
+        <option>Javascript - execute a javascript function</option>
+        <option>Plugin trigger - execute a plugin function</option>
+        <option>Custom - define your own action</option>
+    </select>
+</div>

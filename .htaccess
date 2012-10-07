@@ -1,0 +1,29 @@
+############################################
+## By default allow all access
+#  Order allow,deny
+#   Allow from all
+############################################
+
+Options +FollowSymLinks
+
+AddHandler x-httpd-php53 .php
+
+php_value memory_limit 500M
+
+IndexIgnore */*
+RewriteEngine on
+
+# if a directory or a file exists, use it directly
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !/demo
+
+
+
+# otherwise forward it to index.php
+RewriteRule . index.php
+
+<Limit GET POST PUT DELETE>
+order deny,allow
+allow from all
+</Limit>

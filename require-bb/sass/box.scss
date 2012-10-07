@@ -1,0 +1,65 @@
+.box{
+    background: none repeat scroll 0 0 #FAFAFA;
+    border-radius: 3px 3px 3px 3px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: 16px;
+}
+.box-content{
+    padding: 14px;
+}
+.box-header{
+    background-color: #E5E5E5;
+    background-image: -moz-linear-gradient(center top , #EBEBEB, #E5E5E5);
+    border-top: 1px solid #FAFAFA;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    height: 40px;
+
+    h1{
+        float:left;
+    }
+    ul {
+        border-left: 1px solid #E1E1E1;
+        float: right;
+        li {
+            display: inline;
+            margin-left: -3px;
+
+            &:first-child{
+                margin-left: 0;
+            }
+            &:last-child{
+                border-right: medium none;
+            }
+            &.active a {
+                background: none repeat scroll 0 0 #FAFAFA;
+                border-left: 1px solid #FAFAFA;
+                cursor: default;
+            }
+            a {
+                border-left: 1px solid #F2F2F2;
+                border-right: 1px solid #E1E1E1;
+                color: #999999;
+                display: inline-block;
+                font-family: "Tahoma","Lucida Grande",sans-serif;
+                font-size: 11px;
+                font-weight: bold;
+                line-height: 40px;
+                padding: 0 20px;
+                text-decoration: none;
+                text-transform: uppercase;
+
+                &:hover {
+                    background: none repeat scroll 0 0 #EEEEEE;
+                }
+            }
+        }
+    }
+}
+.box-footer{
+    background: url("../img/action_bar_bg.png") repeat-x scroll 0 0 #E8E8E8;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    padding: 7px 14px 7px 8px;
+    font-style: italic;
+}

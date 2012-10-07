@@ -1,0 +1,55 @@
+body{
+    background: url(../images/main-background.jpg) repeat #FFFFFF;
+    font-family: "Tahoma";
+    color: #FFFFFF;
+}
+.break {
+    background: url(../images/break.png) repeat transparent;
+    height: 4px;
+    width: 100%;
+}
+.lastcomment{
+    background: #FFFFFF;
+    height: 90px;
+}
+.container{
+    width: 500px;
+}
+.margin{
+    margin:15px;
+}
+.padding{
+    padding:15px;
+}
+.block{
+    display:block;
+    margin-bottom: 15px;
+}
+.block .green .content{
+    background: #0096a7;
+}
+.block .purple .content{
+    background: #90207c;
+}
+.block .green .bottom{
+    display:block;
+    height:11px;
+    width:500px;
+    background: url(../images/content-bottom-green.png) no-repeat transparent;
+}
+.block .purple .bottom{
+    display:block;
+    height:11px;
+    background: url(../images/content-bottom-purple.png) no-repeat transparent;
+}
+/*
+    Discussie blok op home
+*/
+body.home .block .discussion img{
+   padding-bottom: 10px;
+}
+body.home .block .discussion span{
+    color: #f6bb42;
+    font-size: 20px;
+    line-height: 1.3em;
+}

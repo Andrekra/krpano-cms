@@ -1,0 +1,14 @@
+<h2>Project</h2>
+<label for="project-name">Title</label>
+        <input id="project-name" type="text" value="<%= name %>" placeholder="<%=name %>" />
+<label for="project-description">Short Description</label>
+        <textarea id="project-description"><%= description %></textarea>
+<label for="project-defaultlocation">Opening Panorama</label>
+    <select id="project-defaultlocation">
+      <% _.each(locations, function(location){ %>
+       <option <%= default_location_id == location.id ? "selected" : "" %> value="<%= location.id %>"><%= location.name %></option>
+      <% }); %>
+    </select>
+    <div class="btn-group">
+        <a class="btn saveproject" href="#"><span class="icon-ok"></span> Save</a>
+    </div>

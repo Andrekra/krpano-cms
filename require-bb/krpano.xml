@@ -1,0 +1,78 @@
+<krpano>
+	<!-- vtour.xml template krpano tools version 1.0.8.12 -->	
+
+    <events name="krpanojsf"
+             onxmlcomplete="js(krApp.events.onxmlcomplete())"
+             onpreviewcomplete="js(krApp.events.onpreviewcomplete())"
+             onclick="js(krApp.events.click())"
+             keep="true"
+     />
+    <action name="alert">
+        js(alert('%1'));
+    </action>
+    <action name="load_panorama">
+        loadscene(%1, null, MERGE, BLEND(1));
+    </action>
+	
+	
+	<!-- disable the default progress bar -->
+	<progress showload="none" showwait="none" />   
+    <!-- default hotspot style -->
+    <style name="hotspotstyle"
+           url="%SWFPATH%/img/hotspot_location.png"
+           keep="true"
+           accuracy="0"
+           zoom="true" distorted="false" details="8" flying="0"
+
+           scale="1" scale9grid="" scalechildren="false" rotate="0"
+           rx="0" ry="0" rz="0"
+           edge="center" ox="" oy=""
+           crop="" ondowncrop="" onovercrop=""
+           enabled="true" usecontentsize="false" handcursor="true" capture="false" children="true" maskchildren="false"
+           zorder="1"
+           onloaded=""
+           alpha="1.00" autoalpha="true" blendmode="normal" effect="" smoothing="true" pixelhittest="false"
+           refreshrate="auto"
+           onover="tween(scale, 2, 1,easeOutElastic);"
+           onhover=""
+           onout="tween(scale, 1, 1,easeOutElastic);"
+           ondown=""
+           onup=""
+           onclick="showpopup(get(name))"
+    />
+	
+	<scene name="scene_4" title="cafe1" onstart="" thumburl="panos/cafe1.tiles/thumb.jpg">
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="90" maxpixelzoom="2.0" fovmin="60" fovmax="120" limitview="auto" />
+
+		<preview url="panos/cafe1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/cafe1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/cafe1.tiles/mobile_%s.jpg" />
+			</mobile>
+			<tablet>
+				<cube url="panos/cafe1.tiles/tablet_%s.jpg" />
+			</tablet>
+		</image>
+
+	</scene>
+	<scene name="scene_30_4" title="scene_5" onstart="" thumburl="panos/cafe1.tiles/thumb.jpg">
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="90" maxpixelzoom="2.0" fovmin="60" fovmax="120" limitview="auto" />
+
+		<preview url="panos/cafe1.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/cafe1.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/cafe1.tiles/mobile_%s.jpg" />
+			</mobile>
+			<tablet>
+				<cube url="panos/cafe1.tiles/tablet_%s.jpg" />
+			</tablet>
+		</image>
+
+	</scene>
+
+
+</krpano>

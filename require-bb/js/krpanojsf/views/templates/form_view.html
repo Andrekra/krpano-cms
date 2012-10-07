@@ -1,0 +1,260 @@
+
+<div id="hlookat" class="attribute">
+    <label title="The horizontal looking direction in spherical coordinates (-180 ... +180).
+Note - the value will not automatically wrap around the 360.">hlookat</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-180.00" data-max="180.00" data-step="1.00" data-value="<%= hlookat %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= hlookat %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="vlookat" class="attribute">
+    <label title="The veritcal looking direction in spherical coordinates (-90 ... +90).
+-90 = Zenith view, +90 = Nadir view. ">vlookat</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-90.00" data-max="90.00" data-step="1.00" data-value="<%= vlookat %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= vlookat %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="camroll" class="attribute">
+    <label title="The roll / rotation of the view camera.">camroll</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-180.00" data-max="180.00" data-step="1.00" data-value="<%= camroll %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= camroll %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="fovtype" class="attribute">
+    <label title="Defines the type of fov (field of view).
+Possible settings:
+
+VFOV - vertical field of view, based on the screen height
+HFOV - horizontal field of view, based on the screen width
+DFOV - diagonal field of view, based on the screen diagonal
+MFOV - 'maximum' field of view (a dynamic mix of VFOV and HFOV)
+
+Note - on mobile and tablet devices the default value will be MFOV!">fovtype</label>
+    <div class="radio">                        <input type="radio" id="fovtype_mfov" value="MFOV" name="fovtype_radio"
+                    <% if(fovtype == "MFOV"){ "selected" } %>
+                    />
+                <label for="fovtype_mfov">Mfov</label>
+                                        <input type="radio" id="fovtype_hfov" value="HFOV" name="fovtype_radio"
+                    <% if(fovtype == "HFOV"){ "selected" } %>
+                    />
+                <label for="fovtype_hfov">Hfov</label>
+                                        <input type="radio" id="fovtype_dfov" value="DFOV" name="fovtype_radio"
+                    <% if(fovtype == "DFOV"){ "selected" } %>
+                    />
+                <label for="fovtype_dfov">Dfov</label>
+                                        <input type="radio" id="fovtype_mfov" value="MFOV" name="fovtype_radio"
+                    <% if(fovtype == "MFOV"){ "selected" } %>
+                    />
+                <label for="fovtype_mfov">Mfov</label>
+                </div>        </div>
+        <div id="fov" class="attribute">
+    <label title="The current field of view (in degrees, 0.0 ... 179.0). ">fov</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="179.00" data-step="1.00" data-value="<%= fov %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= fov %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="fovmin" class="attribute">
+    <label title="The minimum fov value, this will limit the in-zooming to this value.
+
+Note - maxpixelzoom can be used instead!">fovmin</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="179.00" data-step="1.00" data-value="<%= fovmin %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= fovmin %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="fovmax" class="attribute">
+    <label title="The maximum fov value, this will limit the out-zooming to this value.">fovmax</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="179.00" data-step="1.00" data-value="<%= fovmax %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= fovmax %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="maxpixelzoom" class="attribute">
+    <label title="The maximum pixel zoom factor of the pano image.
+This will limit the fov automatically depending on the pano resolution and the current viewing window, e.g. 1.0 = limit to 100% zoom, no pixel scaling of the source image will be visible.
+
+Note - when set, this setting will overrule the fovmin setting, the fovmin value will be dynamically updated in this case.">maxpizelzoom</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="1.00" data-step="0.10" data-value="<%= maxpixelzoom %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= maxpixelzoom %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="fisheye" class="attribute flashonly">
+    <label title="Fisheye distortion effect (0.0 - 1.0)
+This value contolls the interpolation between the normal rectiliniear view and the fisheye distorted view.
+
+0.0 = no distortion / rectiliniear
+1.0 = full distortion
+
+There are two fisheye modes:
+- normal (view.stereographic="false")
+- stereographic (view.stereographic="true")">fisheye</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="1.00" data-step="0.10" data-value="<%= fisheye %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= fisheye %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="fisheyefovlink" class="attribute flashonly">
+    <label title="The fov and fisheye settings are linked together (when zooming in - the fisheye effect will be reduced) this value is the correlation between these values:
+(0.0 - 3.0), 0=linear correlation, 3=dynamic correlation) - default="0.5"">fisheyefovlink</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="3.00" data-step="0.10" data-value="<%= fisheyefovlink %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= fisheyefovlink %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="limitfov" class="attribute">
+    <label title="This is a setting for using the fisheye distortion.
+When enabled the fov will be automatically limited to avoid seeing of the fisheye lens border. When disabled and with a fisheye=1.0 setting it will be possible to zoom-out to 180Â° to see the full fisheye circle. ">limitfov</label>
+                                <input type="checkbox" name="showpolys" class="amount" <% if (limitfov == true){ "checked" } %> />
+                        </div>
+        <div id="stereographic" class="attribute">
+    <label title="Enables/disables the stereographic fisheye projection.
+The "strongness" of the projection it is controlled by the "fisheye" variable.
+The stereographic projection allowes very interessting panorama views like the Little Planet Views. ">stereographic</label>
+                                <input type="checkbox" name="showpolys" class="amount" <% if (stereographic == true){ "checked" } %> />
+                        </div>
+        <div id="pannini" class="attribute">
+    <label title="Enables/disables the "Pannini/Vedutismo" Projection.
+The "strongness" of the projection it is controlled by the "fisheye" variable. ">pannini</label>
+                                <input type="checkbox" name="showpolys" class="amount" <% if (pannini == true){ "checked" } %> />
+                        </div>
+        <div id="architectural" class="attribute">
+    <label title="Architectural projection (0.0 - 1.0).
+This value interpolates between the current projection (0.0) and the architectural projection mode (1.0). ">architectural</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="0.00" data-max="1.00" data-step="0.10" data-value="<%= architectural %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= architectural %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="architecturalonlymiddle" class="attribute">
+    <label title="When enabled, the architectural projection will be only used in the 'middle' area of the pano. When looking more up and down then the architectural projection will slowly switch back to normal projection. ">architecturalonlymiddle</label>
+                                <input type="checkbox" name="showpolys" class="amount" <% if (architecturalonlymiddle == true){ "checked" } %> />
+                        </div>
+        <div id="limitview" class="attribute">
+    <label title="Limit the viewing range in the pano.
+
+Possible values:
+
+off - no limiting at all
+auto - automatic limiting (default)
+lookat - limit the lookat variables direct to "hlookatmin", "hlookatmax", "vlookatmin", "vlookatmax"
+range - limit to the area set by "hlookatmin", "hlookatmax", "vlookatmin", "vlookatmax", allow viewing only INSIDE this range
+fullrange - limit to the area set by "hlookatmin", "hlookatmax", "vlookatmin", "vlookatmax", but allow zooming out to see the whole image (usefull for FLAT panos!)
+offrange - limit to the area set by "hlookatmin", "hlookatmax", "vlookatmin", "vlookatmax", but don't limit the zooming in any way.
+
+Notes to "range", "fullrange" and "offrange":
+when the "hlookatmin", "hlookatmax", "vlookatmin", "vlookatmax" values were not set, they will be automatically calculated from the size of the pano image. ">limitview</label>
+    <div class="radio">                        <input type="radio" id="limitview_off" value="off" name="limitview_radio"
+                    <% if(limitview == "off"){ "selected" } %>
+                    />
+                <label for="limitview_off">Off</label>
+                                        <input type="radio" id="limitview_auto" value="auto" name="limitview_radio"
+                    <% if(limitview == "auto"){ "selected" } %>
+                    />
+                <label for="limitview_auto">Auto</label>
+                                        <input type="radio" id="limitview_lookat" value="lookat" name="limitview_radio"
+                    <% if(limitview == "lookat"){ "selected" } %>
+                    />
+                <label for="limitview_lookat">Lookat</label>
+                                        <input type="radio" id="limitview_range" value="range" name="limitview_radio"
+                    <% if(limitview == "range"){ "selected" } %>
+                    />
+                <label for="limitview_range">Range</label>
+                                        <input type="radio" id="limitview_fullrange" value="fullrange" name="limitview_radio"
+                    <% if(limitview == "fullrange"){ "selected" } %>
+                    />
+                <label for="limitview_fullrange">Fullrange</label>
+                                        <input type="radio" id="limitview_offrange" value="offrange" name="limitview_radio"
+                    <% if(limitview == "offrange"){ "selected" } %>
+                    />
+                <label for="limitview_offrange">Offrange</label>
+                </div>        </div>
+        <div id="hlookatmin" class="attribute">
+    <label title="The minimum horizontal looking position in spherical coordinates (-180 .. +180).
+(When hlookatmax-hlookatmin=360 then no limiting will be done)">hlookatmin</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-180.00" data-max="180.00" data-step="1.00" data-value="<%= hlookatmin %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= hlookatmin %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="hlookatmax" class="attribute">
+    <label title="The maximum horizontal looking position in spherical coordinates (-180 .. +180).
+(When hlookatmax-hlookatmin=360 then no limiting will be done)">hlookatmax</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-180.00" data-max="180.00" data-step="1.00" data-value="<%= hlookatmax %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= hlookatmax %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="vlookatmin" class="attribute">
+    <label title="The minimum vertical looking position in spherical coordinates (-90 .. +90).">vlookatmin</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-90.00" data-max="90.00" data-step="1.00" data-value="<%= vlookatmin %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= vlookatmin %>" />
+                    </div>
+                </div>
+                        </div>
+        <div id="vlookatmax" class="attribute">
+    <label title="The maximum vertical looking position in spherical coordinates (-90 .. +90).">vlookatmax</label>
+                            <div class="attribute-row">
+                    <div class="cell">
+                        <div class="slider" data-min="-90.00" data-max="90.00" data-step="1.00" data-value="<%= vlookatmax %>"></div>
+                    </div>
+                    <div class="cell">
+                        <input type="text"class="amount spinner" value="<%= vlookatmax %>" />
+                    </div>
+                </div>
+                        </div>

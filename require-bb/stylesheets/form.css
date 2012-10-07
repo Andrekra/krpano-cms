@@ -1,0 +1,16 @@
+input, textarea, input:focus {
+  outline: none;
+  border: 1px solid #d9d9d9;
+  color: #666666;
+  margin: 0 0 20px 0;
+  padding: 6px;
+  border-radius: 5px;
+  font-family: "Aller","Lucida Grande",sans-serif; }
+
+select {
+  margin: 0 0 20px 0; }
+
+label {
+  color: #666666;
+  font-size: 12px;
+  font-family: "Aller","Lucida Grande",sans-serif; }

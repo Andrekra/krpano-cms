@@ -1,0 +1,11 @@
+.clear {
+  clear: both; }
+
+.hidden {
+  display: none; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }

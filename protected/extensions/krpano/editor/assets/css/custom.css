@@ -1,0 +1,32 @@
+body{
+    font-size: 10px;
+}
+/* ============================================= Krpano viewer ============================================= */
+.viewer{
+    height: 500px;
+}
+/* ============================================= TOGGLE SIDEBAR ============================================= */
+#sidebar-toggle {
+	float: left;
+	width: 9px;
+	border-right: solid 1px #CCCCCC;
+	margin: 0;
+	padding: 0;
+
+}
+#sidebar-toggle a {
+	display: block;
+	margin: 0;
+	background: #CCCCCC;
+	text-indent: -9999px;
+	overflow: hidden;
+	border: none;
+     min-height: 500px;
+}
+#sidebar-toggle a:hover {
+	background: #F5F5F5;
+}
+/* ============================================= Tooltip ============================================= */
+.accordion .tooltip{
+    display: none;
+}

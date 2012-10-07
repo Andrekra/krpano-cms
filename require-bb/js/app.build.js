@@ -1,0 +1,14 @@
+({
+    appDir:"../",
+    baseUrl:"js",
+    dir:"../",
+    paths:{
+        order:"vendors/require/order",
+        underscore:"vendors/underscore/underscore-min",
+        backbone:"vendors/backbone/backbone-optamd3-min",
+        text:"vendors/require/text",
+        templates:"../templates",
+        jquery:"vendors/require/require-jquery"},
+    modules:[
+    {name:"main",exclude:["jquery"]}
+]})

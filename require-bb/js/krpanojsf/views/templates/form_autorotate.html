@@ -1,0 +1,38 @@
+<div id="enabled" class="attribute">
+    <label>enabled</label>
+    <input type="checkbox" name="enabled" class="amount" <% if(enabled == true){ "checked" } %> />
+</div>
+<div id="waittime" class="attribute">
+    <label>waittime</label>
+    <input type="text" name="waittime" class="amount spinner" data-min="0" data-step="0.5" value="<%= waittime %>" />
+</div>
+<div id="accel" class="attribute advanced">
+    <label>accel</label>
+    <input type="text" name="accel" class="amount spinner" data-min="0" data-step="0.5" value="<%= accel %>" />
+</div>
+<div id="speed" class="attribute">
+    <label>speed</label>
+    <input type="text" name="speed" class="amount spinner" data-min="0" data-step="0.5" value="<%= speed %>" />
+</div>
+<div id="horizon" class="attribute advanced">
+    <label>horizon</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="-90" data-max="90" data-step="2" data-value="<%= horizon %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= horizon %>" />
+        </div>
+    </div>
+</div>
+<div id="tofov" class="attribute advanced">
+    <label>tofov</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="0" data-max="360" data-step="1" data-value="<%= tofov %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= tofov %>" />
+        </div>
+    </div>
+</div>

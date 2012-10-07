@@ -1,0 +1,79 @@
+<krpano>
+<events onxmlcomplete="js(initKrpano())" />
+<preview type="grid()" />
+<action name="placehotspot">
+	set(hotspot[%3].onclick, js(focusHotspot(%3)));
+	set(hotspot[%3].ath, %1);
+	set(hotspot[%3].atv, %2);
+	changeurl(%3,%4);	
+</action>
+    <action name="add_a_hotspot">
+        addhotspot(test);
+        set(hotspot[test].url, http://labs.panofy.com/src/themes/default/hotspots/hotspot_location.png);
+        
+    </action>
+<action name="changeurl">
+    trace(%2);
+	set(hotspot[%1].url, %2);
+</action>
+<hotspot name="tiny_bar" keep="true" visible="false" alpha="0.8" url="tinybar_bg.png" enabled="true" handcursor="false" ox="-50" oy="-50" zorder="1000" />
+<plugin name="tiny_bar_delete" parent="hotspot[tiny_bar]" keep="true" alpha="1" visible="true" url="delete.png" enabled="true" x="1" y="0"  width="16" height="16"  align="center" zorder="1001" onclick="js(editor.removeHotspot())" onhover="showtext(Delete this hotspot, tooltip)"  />
+<plugin name="tiny_bar_save" parent="hotspot[tiny_bar]" keep="true" alpha="1" visible="true" url="save.gif" enabled="true" x="-20" y="0" width="16" height="16" align="center" zorder="1001" onclick="js(editor.saveHotspot())" onhover="showtext(Save the hotspot to the database, tooltip)"/>
+<plugin name="tiny_bar_move" parent="hotspot[tiny_bar]" keep="true" alpha="1" visible="true" url="move.gif" enabled="true" x="22" y="0" width="16" height="16" align="center" zorder="1001" 
+ondown="set(dragging,true); draghotspot();"
+onup="set(dragging,false);"
+onhover="showtext(click and hold to drag the hotspot, tooltip)"
+/>
+<action name="draghotspot">
+  if(dragging, 
+		<!--offset the bar-->
+		add(tmp_mousex,mouse.x,30);
+		add(tmp_mousey,mouse.y,50);
+		<!--convert mouse coordinates to spherical-->
+		screentosphere(tmp_mousex,tmp_mousey,tmp_ath,tmp_atv);
+		<!--move the bar-->
+		set(hotspot[tiny_bar].atv, get(tmp_atv));
+		set(hotspot[tiny_bar].ath, get(tmp_ath));
+		<!--move hotspot-->
+		set(hotspot[%1].atv, get(tmp_atv));
+		set(hotspot[%1].ath, get(tmp_ath));
+		<!--update sliders in the editor-->
+		js(editor.setMoveSliders(get(tmp_ath),get(tmp_atv)));
+		<!-- loop it -->
+		delayedcall(0,draghotspot(%1));
+	);
+</action>
+<textstyle name="tooltip"
+		font="Verdana"
+		fontsize="11"
+		background="true"
+		backgroundcolor="0xFFFFFF"
+		textcolor="0x000000"
+		alpha="0.8"
+		border="false"
+		bold="false"
+		italic="false"
+		effect="dropshadow(4,45,0x000000,3,0.5);"
+		textalign="Center"
+		xoffset="20"
+		yoffset="-5"
+/>
+<textstyle name="hotspot_tooltip"
+		font="Verdana"
+		fontsize="11"
+		background="true"
+		backgroundcolor="0xFFFFFF"
+		textcolor="0x000000"
+		alpha="0.8"
+		border="false"
+		bold="false"
+		italic="false"
+		effect="dropshadow(4,45,0x000000,3,0.5);"
+		textalign="Center"
+		xoffset="20"
+		yoffset="-5"
+/>
+<plugin url="%SWFPATH%/plugins/editor.swf" keep="true" />
+<plugin url="%SWFPATH%/plugins/options.swf" keep="true" />
+
+</krpano>

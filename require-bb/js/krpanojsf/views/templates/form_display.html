@@ -1,0 +1,79 @@
+<div id="details" class="advanced attribute">
+    <label>details</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="15" data-max="100" data-step="2" data-value="<%= details %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= details %>" />
+        </div>
+    </div>
+</div>
+<div id="fps" class="advanced attribute">
+    <label title="fps pfdf dfdfdf fffdfd">fps</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="15" data-max="100" data-step="2" data-value="<%= details %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= details %>" />
+        </div>
+    </div>
+
+
+</div>
+<div id="flash10" class="attribute">
+    <label>flash10</label>
+    <input type="checkbox" name="flash10" class="amount" <% if(flash10 == "on"){ "checked" } %> />
+</div>
+<div id="tessmode" class="advanced attribute">
+    <label>tessmode</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="15" data-max="100" data-step="2" data-value="<%= details %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= details %>" />
+        </div>
+    </div>
+</div>
+<div id="movequality" class="radio attribute">
+    <label>movequality</label>
+    <input type="radio" id="movequality_low" value="low" name="movequality_radio" /><label for="movequality_low">Low</label>
+    <input type="radio" id="movequality_high" value="high" name="movequality_radio" checked="checked" /><label for="movequality_high">High</label>
+    <input type="radio" id="movequality_highsharp" value="highsharp" name="movequality_radio" /><label for="movequality_highsharp">Highsharp</label>
+    <input type="radio" id="movequality_best" value="best" name="movequality_radio" /><label for="movequality_best">Best</label>
+</div>
+<div id="stillquality" class="radio attribute">
+    <label>stillquality</label>
+    <input type="radio" id="stillquality_low" value="low" name="stillquality_radio" /><label for="stillquality_low">Low</label>
+    <input type="radio" id="stillquality_high" value="high" name="stillquality_radio" checked="checked" /><label for="stillquality_high">High</label>
+    <input type="radio" id="stillquality_highsharp" value="highsharp" name="stillquality_radio" /><label for="stillquality_highsharp">Highsharp</label>
+    <input type="radio" id="stillquality_best" value="best" name="stillquality_radio" /><label for="stillquality_best">Best</label>
+</div>
+<div id="stilltime" class="advanced attribute">
+    <label>stilltime</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="15" data-max="100" data-step="2" data-value="<%= details %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= details %>" />
+        </div>
+    </div>
+</div>
+<div id="sharpen" class="advanced attribute">
+    <label>sharpen</label>
+    <div class="attribute-row">
+        <div class="cell">
+            <div class="slider" data-min="15" data-max="100" data-step="2" data-value="<%= details %>"></div>
+        </div>
+        <div class="cell">
+            <input type="text"class="amount" value="<%= details %>" />
+        </div>
+    </div>
+</div>
+<div id="showpolys" class="advanced attribute">
+    <label>showpolys</label>
+    <input type="checkbox" name="showpolys" class="amount" <% if(showpolys == true){ "checked" } %> />
+</div>
