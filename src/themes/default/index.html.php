@@ -1,17 +1,17 @@
 <?php echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">' ?>
 <?php echo '<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="nl" lang="nl">' ?>
-<head>    
+<head>
 	<title><?= $project->Name ?></title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <meta name="description" content="<?= $project->Description ?>" />
 	<meta name="keywords" content="<?= $project->Keywords ?>" />
 	<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	
-	<link rel="shortcut icon" href="" type="image/x-icon" />
-	<link rel="stylesheet" type="text/css" href="theme/style.css" />	
 
-	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>		
+	<link rel="shortcut icon" href="" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="theme/style.css" />
+
+	<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.2.pack.js"></script>
 	<script type="text/javascript" src="js/fancybox/jquery.fancybox-1.3.1.js"></script>
 	<link rel="stylesheet" type="text/css" href="js/fancybox/jquery.fancybox-1.3.1.css" media="screen" />
@@ -20,7 +20,7 @@
 <script type="text/javascript">
 jQuery.event.add(window, "load", resizeFrame);
 jQuery.event.add(window, "resize", resizeFrame);
-function resizeFrame() 
+function resizeFrame()
 {
     var h = $(window).height();
     var w = $(window).width();
@@ -57,7 +57,7 @@ function getrandomvalue()
 }
 </script>
 <div id="container">
-	<div id="header">  	  
+	<div id="header">
 	  <div id="headerlogo"></div>
 	</div>
 	<div id="CenterContent">
@@ -76,25 +76,16 @@ function getrandomvalue()
 <script>
 	var viewer = createPanoViewer({swf:"krpano.swf", id:"krpanoSWFObject", target:"krpanoDIV"});
 	//viewer.useHTML5("whenpossible");		// incomment to use the HTML5 krpanoJS viewer always when possible (Safari5)
-	if( viewer.isDevice("iPhone|iPod|Android") )
+	if( viewer.isDevice("iPhone|iPod|Android") ){
 		viewer.addVariable("xml", "krpano_mobile.xml");
-	else
+	}
+	else{
 		viewer.addVariable("xml", "xml/photo_<?php echo $DefaultLocation->LocationId; ?>.xml?t=" + new Date().getTime());
+	}
 	viewer.embed();
 
 </script>
-<!--<script type="text/javascript">
-	var swf = createswf("krpano.swf?t=" + new Date().getTime(), "krpanoSWFObject","100%", "100%", "#000000");
-	swf.addVariable("xml", "<?= $DefaultLocation->Name; ?>?t=" + new Date().getTime());
-	swf.addVariable("license", "assets/license.gif");
-	swf.useExpressInstall('assets/html/js/expressinstall.swf');
-    swf.setAttribute('xiRedirectUrl', window.location); 
-	swf.addParam("wmode", 	"window");
-	swf.addParam("allowfullscreen", "true");
-	swf.addParam("allowscriptaccess", "always");
-	swf.passQueryParameters();
-	swf.embed("krpano");
-</script>-->
+
 <!-- Google Analytics code snippet -->
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -105,7 +96,7 @@ document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.
 	var pageTracker = _gat._getTracker("");
 	pageTracker._setDomainName("none");
 	pageTracker._setAllowLinker(true);
-	pageTracker._setCustomVar(1, "<?= $project->Name ?>", "Index", 3); 
+	pageTracker._setCustomVar(1, "<?= $project->Name ?>", "Index", 3);
 	pageTracker._trackPageview();
 	} catch(err) {}
 </script>
